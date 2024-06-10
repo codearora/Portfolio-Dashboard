@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
 import Footer from './components/Footer';
+import FDPortfolioChart from './components/FDPortfolioChart';
+import FDMaturityTimeline from './components/FDMaturityTimeline';
 
 function App() {
   return (

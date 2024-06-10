@@ -1,40 +1,37 @@
-import React from 'react';
-import { Bar } from 'react-chartjs-2';
+import React, { useRef, useEffect } from 'react';
+import { Chart, BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
+
+Chart.register(BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 function FDMaturityTimeline() {
     const data = {
-        labels: ['JFM', 'AMJ', 'JAS', 'OND', 'JFM', 'AMJ', 'JAS', 'OND'],
-        datasets: [
-            {
-                label: 'Utkarsh FD 1',
-                backgroundColor: '#36A2EB',
-                data: [10, 20, 30, 40, 50, 60, 70, 80]
-            },
-            {
-                label: 'Shriram FD Plan 2',
-                backgroundColor: '#FF6384',
-                data: [80, 70, 60, 50, 40, 30, 20, 10]
-            }
-        ]
+        labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
+        datasets: [{
+            label: 'Utkarsh FD 1',
+            data: [12, 19, 3, 5, 2, 3, 10, 15, 8, 20, 7, 11],
+            backgroundColor: '#36A2EB',
+        }]
     };
 
-    const options = {
-        scales: {
-            x: {
-                stacked: true
-            },
-            y: {
-                stacked: true
-            }
+    const chartRef = useRef(null);
+
+    useEffect(() => {
+        let chartInstance = null;
+        if (chartRef.current) {
+            chartInstance = new Chart(chartRef.current, {
+                type: 'bar',
+                data: data,
+            });
         }
-    };
 
-    return (
-        <div>
-            <h2>FD Maturity Timeline</h2>
-            <Bar data={data} options={options} />
-        </div>
-    );
+        return () => {
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+        };
+    }, [data]);
+
+    return <canvas ref={chartRef} />;
 }
 
 export default FDMaturityTimeline;
