@@ -1,37 +1,64 @@
-import React, { useRef, useEffect } from 'react';
-import { Chart, BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
+import React, { useEffect } from 'react';
+import { Bar } from 'react-chartjs-2';
+import { Chart, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 
-Chart.register(BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend);
+Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
+const options = {
+    responsive: true,
+    plugins: {
+        legend: {
+            position: 'top',
+        },
+        title: {
+            display: true,
+            text: 'FD Maturity Timeline',
+        },
+    },
+    scales: {
+        x: {
+            stacked: true,
+        },
+        y: {
+            stacked: true,
+        },
+    },
+};
+
+const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+const data = {
+    labels,
+    datasets: [
+        {
+            label: 'Utkarsh FD 1',
+            data: [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            backgroundColor: '#FF6384',
+        },
+        {
+            label: 'Shriram FD Plan 2',
+            data: [0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+            backgroundColor: '#36A2EB',
+        },
+        {
+            label: 'Bajaj Finserv FD 1',
+            data: [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+            backgroundColor: '#FFCE56',
+        },
+        {
+            label: 'Mahindra FD Plan 2',
+            data: [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
+            backgroundColor: '#4BC0C0',
+        },
+    ],
+};
 
 function FDMaturityTimeline() {
-    const data = {
-        labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
-        datasets: [{
-            label: 'Utkarsh FD 1',
-            data: [12, 19, 3, 5, 2, 3, 10, 15, 8, 20, 7, 11],
-            backgroundColor: '#36A2EB',
-        }]
-    };
-
-    const chartRef = useRef(null);
-
-    useEffect(() => {
-        let chartInstance = null;
-        if (chartRef.current) {
-            chartInstance = new Chart(chartRef.current, {
-                type: 'bar',
-                data: data,
-            });
-        }
-
-        return () => {
-            if (chartInstance) {
-                chartInstance.destroy();
-            }
-        };
-    }, [data]);
-
-    return <canvas ref={chartRef} />;
+    return (
+        <div className="fd-maturity-timeline">
+            <Bar options={options} data={data} />
+        </div>
+    );
 }
 
 export default FDMaturityTimeline;

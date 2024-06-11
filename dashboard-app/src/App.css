@@ -32,7 +32,46 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.App {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f8f9fa;
+}
+
+nav a {
+  margin: 0 10px;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.fd-portfolio,
+.fd-maturity-timeline,
+.cards,
+.video-kyc {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+}
+
+.card {
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin: 10px 0;
 }
