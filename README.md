@@ -17,7 +17,7 @@ Welcome to the Dashboard Application! This application provides a beautiful and 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/dashboard-app.git
+   git clone https://github.com/codearora/dashboard-app.git
    ```
 
 2. Navigate to the project directory:
