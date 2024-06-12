@@ -1,6 +1,5 @@
 
 
-```markdown
 # Dashboard Application
 
 Welcome to the Dashboard Application! This application provides a beautiful and interactive dashboard for managing financial data.
@@ -69,4 +68,7 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
+
+Connect With Me:
+LinkedIn: https://www.linkedin.com/in/jaiarora6377
+Email: jaiarora6377@gmail.com
