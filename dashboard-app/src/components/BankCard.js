@@ -4,7 +4,7 @@ import { Card, CardContent, Typography, Button } from '@mui/material';
 function BankCard({ bankName, interestRate, details, action, color }) {
     return (
         <Card sx={{
-            background: `linear-gradient(135deg, ${color} 30%, #000000 90%)`,
+            backgroundColor: color,
             color: 'white',
             borderRadius: '20px',
             boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)',
@@ -21,13 +21,13 @@ function BankCard({ bankName, interestRate, details, action, color }) {
                 <Typography variant="h5" sx={{ fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }}>
                     {bankName}
                 </Typography>
-                <Typography variant="h6" sx={{ marginTop: '8px', fontSize: '1.2em', fontWeight: '500' }}>
+                <Typography variant="h6" sx={{ marginTop: '8px' }}>
                     {interestRate}
                 </Typography>
-                <Typography variant="body2" sx={{ marginTop: '8px', opacity: 0.8, fontStyle: 'italic' }}>
+                <Typography sx={{ marginTop: '8px', opacity: 0.8 }}>
                     {details}
                 </Typography>
-                <Button variant="contained" color="secondary" sx={{
+                <Button variant="contained" sx={{
                     marginTop: '16px',
                     borderRadius: '50px',
                     padding: '10px 20px',

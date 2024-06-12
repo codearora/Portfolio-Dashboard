@@ -1,37 +1,30 @@
 import React from 'react';
-import { Card, CardContent, Typography, Grid, Button } from '@mui/material';
-
-function Article({ title, content }) {
-    return (
-        <Card>
-            <CardContent>
-                <Typography variant="h6">{title}</Typography>
-                <Typography variant="body2">{content}</Typography>
-                <Button variant="text">Read more...</Button>
-            </CardContent>
-        </Card>
-    );
-}
+import { Typography, Grid, Box } from '@mui/material';
+import Article from './Article';
 
 function Articles() {
     const articles = [
-        { title: "How FDs are taxed", content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
-        { title: "How FDs are taxed", content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." },
-        { title: "How FDs are taxed", content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry." }
+        { title: "How FDs are taxed", content: "Learn about the taxation of Fixed Deposits in this comprehensive guide." },
+        { title: "Benefits of Investing in FDs", content: "Discover the advantages of investing in Fixed Deposits for secure returns." },
+        { title: "FDs vs Mutual Funds", content: "Compare Fixed Deposits and Mutual Funds to make an informed investment decision." }
     ];
 
     return (
-        <div>
-            <Typography variant="h5">Get Answer</Typography>
-            <Typography variant="body2">to all your questions</Typography>
-            <Grid container spacing={2}>
+        <Box sx={{ padding: '24px' }}>
+            <Typography variant="h4" sx={{ fontWeight: 'bold', marginBottom: '16px', color: '#3f51b5' }}>
+                Get Answers
+            </Typography>
+            <Typography variant="body1" sx={{ marginBottom: '32px', color: '#777' }}>
+                to all your questions
+            </Typography>
+            <Grid container spacing={3}>
                 {articles.map((article, index) => (
-                    <Grid item xs={12} sm={4} key={index}>
+                    <Grid item xs={12} sm={6} md={4} key={index}>
                         <Article title={article.title} content={article.content} />
                     </Grid>
                 ))}
             </Grid>
-        </div>
+        </Box>
     );
 }
 
