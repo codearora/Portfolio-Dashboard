@@ -10,7 +10,7 @@ const FDMaturityTimeline = () => {
         datasets: [
             {
                 label: 'Utkarsh FD 1',
-                data: [0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+                data: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1,
@@ -34,7 +34,7 @@ const FDMaturityTimeline = () => {
             },
             {
                 label: 'Mahindra FD Plan 2',
-                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                data: Array(19).fill(1).concat(Array(1).fill(0)), // assuming 19 months for the full period
                 backgroundColor: 'rgba(255, 205, 86, 0.2)',
                 borderColor: 'rgba(255, 205, 86, 1)',
                 borderWidth: 1,
@@ -60,6 +60,10 @@ const FDMaturityTimeline = () => {
             },
             y: {
                 stacked: true,
+                beginAtZero: true,
+                ticks: {
+                    display: false,
+                },
             },
         },
     };
