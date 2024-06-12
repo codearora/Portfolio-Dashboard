@@ -5,11 +5,28 @@ import BankCard from './BankCard';
 import VideoKYC from './VideoKYC';
 import PendingPayments from './PendingPayments';
 import Articles from './Articles';
-import { Grid, Container, Button, Box } from '@mui/material';
+import { Grid, Container, Button, Box, styled } from '@mui/material';
+
+const StyledContainer = styled(Container)({
+    paddingTop: '40px',
+    paddingBottom: '40px',
+});
+
+const StyledButton = styled(Button)({
+    borderRadius: '50px',
+    padding: '10px 20px',
+    fontSize: '1em',
+    textTransform: 'none',
+    backgroundColor: '#FF4081',
+    color: 'white',
+    '&:hover': {
+        backgroundColor: '#F50057',
+    }
+});
 
 function Dashboard() {
     return (
-        <Container maxWidth="lg">
+        <StyledContainer maxWidth="lg">
             <Grid container spacing={3}>
                 <Grid item xs={12} md={6} lg={4}>
                     <FDPortfolioChart />
@@ -23,7 +40,7 @@ function Dashboard() {
                         interestRate="9.10% p.a"
                         details="Highest Interest Rate, RBI Insured"
                         action="Book Now"
-                        color="purple"
+                        color="#9C27B0"
                     />
                 </Grid>
                 <Grid item xs={12} md={6}>
@@ -32,7 +49,7 @@ function Dashboard() {
                         interestRate="8.80% p.a"
                         details="Crisil AAA Rated, No Video KYC required"
                         action="Book Now"
-                        color="blue"
+                        color="#2196F3"
                     />
                 </Grid>
                 <Grid item xs={12} md={6}>
@@ -41,7 +58,7 @@ function Dashboard() {
                         interestRate="8.80% p.a"
                         details="Crisil AAA Rated, No Video KYC required"
                         action="Book Now"
-                        color="black"
+                        color="#212121"
                     />
                 </Grid>
                 <Grid item xs={12} md={6}>
@@ -50,7 +67,7 @@ function Dashboard() {
                         interestRate="8.80% p.a"
                         details="Crisil AAA Rated, No Video KYC required"
                         action="Book Now"
-                        color="red"
+                        color="#F44336"
                     />
                 </Grid>
                 <Grid item xs={12} md={6}>
@@ -61,26 +78,16 @@ function Dashboard() {
                 </Grid>
                 <Grid item xs={12}>
                     <Box sx={{ textAlign: 'center', mt: 4 }}>
-                        <Button variant="contained" color="primary" sx={{
-                            borderRadius: '50px',
-                            padding: '10px 20px',
-                            fontSize: '1em',
-                            textTransform: 'none',
-                            backgroundColor: '#3f51b5',
-                            color: 'white',
-                            '&:hover': {
-                                backgroundColor: '#303f9f',
-                            }
-                        }}>
+                        <StyledButton variant="contained">
                             Get Answers
-                        </Button>
+                        </StyledButton>
                     </Box>
                 </Grid>
                 <Grid item xs={12}>
                     <Articles />
                 </Grid>
             </Grid>
-        </Container>
+        </StyledContainer>
     );
 }
 
