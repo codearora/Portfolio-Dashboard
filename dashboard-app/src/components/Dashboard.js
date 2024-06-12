@@ -5,11 +5,14 @@ import BankCard from './BankCard';
 import VideoKYC from './VideoKYC';
 import PendingPayments from './PendingPayments';
 import Articles from './Articles';
-import { Grid, Container } from '@mui/material';
+import { Grid, Container, Typography } from '@mui/material';
 
 function Dashboard() {
     return (
         <Container maxWidth="lg">
+            <Typography variant="h4" gutterBottom>
+                Welcome, Johan Paul
+            </Typography>
             <Grid container spacing={3}>
                 <Grid item xs={12} md={6} lg={4}>
                     <FDPortfolioChart />
