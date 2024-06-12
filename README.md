@@ -69,6 +69,8 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Connect With Me:
+## Connect With Me:
+
 LinkedIn: https://www.linkedin.com/in/jaiarora6377
+
 Email: jaiarora6377@gmail.com
